@@ -210,3 +210,38 @@ main {
         font-size: 2.2rem;       /* Título adaptable al ancho del celular */
     }
 }
+
+/* --- SOLUCIÓN PARA PANTALLA HORIZONTAL (LANDSCAPE) --- */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .navbar {
+        position: absolute; /* Cambiamos de fixed a absolute para que se mueva al deslizar */
+        flex-direction: row; 
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    .logo-container .logo {
+        height: 80px !important; /* Reducimos drásticamente el logo solo en este modo */
+        width: auto;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        margin-left: 15px;
+    }
+
+    .btn-reserva {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    main {
+        padding-top: 120px; /* Ajustamos el espacio superior para que no haya huecos grandes */
+    }
+}
