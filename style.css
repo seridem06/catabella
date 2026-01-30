@@ -7,8 +7,9 @@
 }
 
 body {
-    background-color: #000; /* Fondo negro elegante */
+    background-color: #000;
     color: #fff;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
 /* Cabecera / Navbar */
@@ -16,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%; /* Reducido para dar espacio al logo */
+    padding: 1rem 5%;
     background-color: #000;
     position: fixed;
     width: 100%;
@@ -26,30 +27,42 @@ body {
 }
 
 .logo-container .logo {
-    height: 300px; /* Aquí controlas el tamaño. Puedes subirlo a 180px si aún lo quieres mayor */
+    height: 300px; /* Tamaño imponente en escritorio */
     width: auto;
     display: block;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     padding: 10px 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
+    margin-left: 3.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #d4af37; /* Cambio a dorado al pasar el mouse */
+    color: #d4af37;
 }
 
 .btn-reserva {
-    border: 1px solid #d4af37;
-    padding: 10px 20px;
-    border-radius: 2px;
+    border: 3px solid #d4af37 !important;
+    padding: 15px 40px !important;
+    font-size: 1.6rem !important;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #d4af37 !important;
+    font-weight: 700 !important;
+    text-decoration: none;
 }
 
 /* Sección Hero (Principal) */
@@ -69,4 +82,114 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     color: #d4af37;
+}
+
+main {
+    padding-top: 320px; /* Espacio para el logo de 300px */
+}
+
+/* Estilos del Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 5% 20px;
+    border-top: 2px solid #d4af37;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* --- CORRECCIÓN RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+    .logo-container .logo {
+        height: 150px; /* Reducción proporcional para tablets */
+    }
+    main {
+        padding-top: 200px;
+    }
+    .nav-links a {
+        font-size: 1.2rem;
+        margin-left: 1.5rem;
+    }
+    .btn-reserva {
+        font-size: 1.2rem !important;
+        padding: 10px 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila logo y menú en móviles */
+        padding: 15px;
+    }
+    .logo-container .logo {
+        height: 100px; /* Tamaño funcional para celulares */
+    }
+    .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin-left: 0;
+        font-size: 1.4rem;
+    }
+    main {
+        padding-top: 300px; /* Ajuste por el cambio a columna */
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
 }
