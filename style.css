@@ -309,3 +309,43 @@ main {
         text-align: center;
     }
 }
+/* --- CORRECCIÓN DE NAVEGACIÓN MÓVIL --- */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute; /* Cambiamos de fixed a absolute para que se mueva con el scroll */
+        flex-direction: column;
+        height: auto;
+        padding: 20px 5%;
+    }
+
+    /* Ajustamos el logo para que no sea tan invasivo en el scroll */
+    .logo-container .logo {
+        height: 180px !important; 
+        margin-bottom: 15px;
+    }
+
+    /* Reducimos el padding del main ya que la barra no es fija */
+    main {
+        padding-top: 280px; 
+    }
+}
+/* --- AJUSTE ESTÉTICO DESPLEGABLE --- */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: relative; /* Se integra en el flujo del menú */
+        left: 0;
+        width: 100%;
+        border: none;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        background-color: #050505; /* Un tono ligeramente distinto para diferenciarlo */
+        box-shadow: none;
+    }
+
+    .dropdown-content li a {
+        text-align: center;
+        padding: 15px 0 !important;
+        font-size: 1.2rem !important;
+        font-family: 'Montserrat', sans-serif;
+    }
+}

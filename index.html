@@ -40,8 +40,33 @@
             </div>
         </section>
     </main>
-
+    <script>
+        // Seleccionamos el trigger del menú
+        const dropdownTrigger = document.querySelector('.dropdown-trigger');
+        const dropdownContent = document.querySelector('.dropdown-content');
+    
+        dropdownTrigger.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) { // Solo aplica en móviles
+                e.preventDefault(); // Evita que el enlace recargue la página
+                
+                // Alterna la visibilidad
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                } else {
+                    dropdownContent.style.display = 'block';
+                }
+            }
+        });
+    
+        // Cerrar si se toca fuera del menú
+        document.addEventListener('click', function(e) {
+            if (!dropdownTrigger.contains(e.target)) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+    </script>
 </body>
+
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-section">
