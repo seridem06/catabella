@@ -176,7 +176,7 @@ main {
     }
 
     .logo-container .logo {
-        height: 180px !important; /* Aumentamos el tamaño en móvil significativamente */
+        height: 250px !important; /* Aumentamos el tamaño en móvil significativamente */
         margin: 0 auto 15px;      /* Centramos el logo y damos espacio abajo */
     }
 
