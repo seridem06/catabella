@@ -165,31 +165,48 @@ main {
     }
 }
 
+/* --- CORRECCIÓN RESPONSIVE PARA LOGO IMPACTANTE --- */
+
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Apila logo y menú en móviles */
-        padding: 15px;
-    }
-    .logo-container .logo {
-        height: 100px; /* Tamaño funcional para celulares */
-    }
-    .nav-links {
-        margin-top: 15px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links a {
-        margin-left: 0;
-        font-size: 1.4rem;
-    }
-    main {
-        padding-top: 300px; /* Ajuste por el cambio a columna */
-    }
-    .footer-container {
-        flex-direction: column;
+        flex-direction: column; /* Apilamos logo y menú verticalmente */
+        height: auto;           /* La barra crece según el logo */
+        padding: 20px 5%;
         text-align: center;
     }
+
+    .logo-container .logo {
+        height: 180px !important; /* Aumentamos el tamaño en móvil significativamente */
+        margin: 0 auto 15px;      /* Centramos el logo y damos espacio abajo */
+    }
+
+    .nav-links {
+        flex-direction: column;   /* Menú en lista para que no se amontone */
+        width: 100%;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        margin-left: 0;           /* Eliminamos el margen lateral de escritorio */
+        font-size: 1.5rem;        /* Tamaño legible para dedos */
+        display: block;
+    }
+
+    .btn-reserva {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;              /* El botón ocupa todo el ancho para facilitar el clic */
+        font-size: 1.4rem !important;
+        padding: 12px !important;
+    }
+
+    /* AJUSTE CRÍTICO: Empujamos el Hero hacia abajo 
+       para que el logo grande no lo tape al cargar */
+    main {
+        padding-top: 420px; 
+    }
+    
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.2rem;       /* Título adaptable al ancho del celular */
     }
 }
