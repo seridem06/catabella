@@ -246,12 +246,12 @@ main {
     }
 }
 /* Contenedor del Dropdown */
+/* --- CORRECCIÓN DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Lista oculta por defecto */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -263,34 +263,49 @@ main {
     list-style: none;
     padding: 10px 0;
     margin-top: 5px;
-    left: 3.5rem; /* Alineado con el margen del enlace original */
+    left: 0; /* Reset para que no se herede el margen del link */
 }
 
-/* Estilo de los elementos de la lista */
 .dropdown-content li a {
     color: #fff !important;
     padding: 12px 20px;
     text-decoration: none;
     display: block;
     font-size: 1.1rem !important;
-    text-transform: none !important; /* Más legible para listas largas */
-    margin-left: 0 !important;
-    transition: background 0.3s;
+    text-transform: none !important;
+    margin-left: 0 !important; /* IMPORTANTE: Quitamos el margen de 3.5rem aquí */
 }
 
-/* Efecto hover en los elementos de la lista */
-.dropdown-content li a:hover {
-    background-color: #1a1a1a;
-    color: #d4af37 !important;
-}
-
-/* Mostrar la lista al pasar el cursor o hacer click */
-.dropdown:hover .dropdown-content, 
-.dropdown:focus-within .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Ajuste para que el trigger no pierda el estilo */
-.dropdown-trigger {
-    cursor: pointer;
+/* --- AJUSTE RESPONSIVE PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra todo el contenido del menú */
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: relative; /* En móvil es mejor que sea relativo para que empuje el contenido */
+        width: 100%;
+        left: 0;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .nav-links a {
+        margin-left: 0 !important; /* Eliminamos el desplazamiento a la derecha */
+        width: 100%;
+        text-align: center;
+    }
 }
