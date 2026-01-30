@@ -1,0 +1,72 @@
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000; /* Fondo negro elegante */
+    color: #fff;
+}
+
+/* Cabecera / Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%; /* Reducido para dar espacio al logo */
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #d4af37;
+}
+
+.logo-container .logo {
+    height: 300px; /* Aquí controlas el tamaño. Puedes subirlo a 180px si aún lo quieres mayor */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    padding: 10px 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37; /* Cambio a dorado al pasar el mouse */
+}
+
+.btn-reserva {
+    border: 1px solid #d4af37;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+/* Sección Hero (Principal) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1350&q=80'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #d4af37;
+}
