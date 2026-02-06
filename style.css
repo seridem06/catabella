@@ -9,7 +9,7 @@
 body {
     background-color: #000;
     color: #fff;
-    overflow-x: hidden; /* Evita desbordamiento horizontal */
+    overflow-x: hidden;
 }
 
 /* Cabecera / Navbar */
@@ -27,7 +27,7 @@ body {
 }
 
 .logo-container .logo {
-    height: 300px; /* Tamaño imponente en escritorio */
+    height: 300px;
     width: auto;
     display: block;
     transition: all 0.3s ease;
@@ -65,20 +65,19 @@ body {
     text-decoration: none;
 }
 
-/* Sección Hero (Principal) */
-/* Sección Hero (Principal) */
+/* Sección Hero */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* CAMBIA LA URL POR LA RUTA DE TU NUEVA IMAGEN */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('image/hero.png'); 
     background-size: cover;
     background-position: center;
 }
+
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -86,7 +85,7 @@ body {
 }
 
 main {
-    padding-top: 320px; /* Espacio para el logo de 300px */
+    padding-top: 320px;
 }
 
 /* Estilos del Footer */
@@ -147,11 +146,11 @@ main {
     color: #777;
 }
 
-/* --- CORRECCIÓN RESPONSIVE --- */
+/* --- RESPONSIVE --- */
 
 @media (max-width: 1024px) {
     .logo-container .logo {
-        height: 150px; /* Reducción proporcional para tablets */
+        height: 150px;
     }
     main {
         padding-top: 200px;
@@ -166,65 +165,60 @@ main {
     }
 }
 
-/* --- CORRECCIÓN RESPONSIVE PARA LOGO IMPACTANTE --- */
-
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Apilamos logo y menú verticalmente */
-        height: auto;           /* La barra crece según el logo */
+        flex-direction: column;
+        height: auto;
         padding: 20px 5%;
         text-align: center;
+        position: absolute; /* Para móviles no es fixed */
     }
 
     .logo-container .logo {
-        height: 250px !important; /* Aumentamos el tamaño en móvil significativamente */
-        margin: 0 auto 15px;      /* Centramos el logo y damos espacio abajo */
+        height: 180px !important;
+        margin: 0 auto 15px;
     }
 
     .nav-links {
-        flex-direction: column;   /* Menú en lista para que no se amontone */
+        flex-direction: column;
         width: 100%;
         gap: 15px;
     }
 
     .nav-links a {
-        margin-left: 0;           /* Eliminamos el margen lateral de escritorio */
-        font-size: 1.5rem;        /* Tamaño legible para dedos */
+        margin-left: 0 !important;
+        font-size: 1.5rem;
         display: block;
+        width: 100%;
     }
 
     .btn-reserva {
         margin-left: 0;
         margin-top: 10px;
-        width: 100%;              /* El botón ocupa todo el ancho para facilitar el clic */
+        width: 100%;
         font-size: 1.4rem !important;
         padding: 12px !important;
     }
 
-    /* AJUSTE CRÍTICO: Empujamos el Hero hacia abajo 
-       para que el logo grande no lo tape al cargar */
     main {
-        padding-top: 420px; 
+        padding-top: 280px; 
     }
     
     .hero-content h1 {
-        font-size: 2.2rem;       /* Título adaptable al ancho del celular */
+        font-size: 2.2rem;
     }
 }
 
-/* --- SOLUCIÓN PARA PANTALLA HORIZONTAL (LANDSCAPE) --- */
-
 @media (max-height: 600px) and (orientation: landscape) {
     .navbar {
-        position: absolute; /* Cambiamos de fixed a absolute para que se mueva al deslizar */
+        position: absolute;
         flex-direction: row; 
         height: auto;
         padding: 10px 5%;
     }
 
     .logo-container .logo {
-        height: 80px !important; /* Reducimos drásticamente el logo solo en este modo */
-        width: auto;
+        height: 80px !important;
     }
 
     .nav-links {
@@ -243,18 +237,18 @@ main {
     }
 
     main {
-        padding-top: 120px; /* Ajustamos el espacio superior para que no haya huecos grandes */
+        padding-top: 120px;
     }
 }
-/* Contenedor del Dropdown */
-/* --- CORRECCIÓN DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
+
+/* --- DROPDOWN CORREGIDO --- */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
+    display: none; /* Se mantiene oculto por defecto */
     position: absolute;
     background-color: #000;
     min-width: 250px;
@@ -264,7 +258,12 @@ main {
     list-style: none;
     padding: 10px 0;
     margin-top: 5px;
-    left: 0; /* Reset para que no se herede el margen del link */
+    left: 0;
+}
+
+/* Esta es la clase que controlaremos con JavaScript */
+.dropdown-content.active {
+    display: block !important;
 }
 
 .dropdown-content li a {
@@ -274,79 +273,30 @@ main {
     display: block;
     font-size: 1.1rem !important;
     text-transform: none !important;
-    margin-left: 0 !important; /* IMPORTANTE: Quitamos el margen de 3.5rem aquí */
+    margin-left: 0 !important;
+    text-align: left;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* --- AJUSTE RESPONSIVE PARA MÓVIL --- */
 @media (max-width: 768px) {
-    .nav-links {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra todo el contenido del menú */
-    }
-
     .dropdown {
         width: 100%;
         text-align: center;
     }
 
     .dropdown-content {
-        position: relative; /* En móvil es mejor que sea relativo para que empuje el contenido */
+        position: relative;
         width: 100%;
         left: 0;
         box-shadow: none;
-        border-left: none;
-        border-right: none;
-    }
-
-    .nav-links a {
-        margin-left: 0 !important; /* Eliminamos el desplazamiento a la derecha */
-        width: 100%;
-        text-align: center;
-    }
-}
-/* --- CORRECCIÓN DE NAVEGACIÓN MÓVIL --- */
-@media (max-width: 768px) {
-    .navbar {
-        position: absolute; /* Cambiamos de fixed a absolute para que se mueva con el scroll */
-        flex-direction: column;
-        height: auto;
-        padding: 20px 5%;
-    }
-
-    /* Ajustamos el logo para que no sea tan invasivo en el scroll */
-    .logo-container .logo {
-        height: 180px !important; 
-        margin-bottom: 15px;
-    }
-
-    /* Reducimos el padding del main ya que la barra no es fija */
-    main {
-        padding-top: 280px; 
-    }
-}
-/* --- AJUSTE ESTÉTICO DESPLEGABLE --- */
-@media (max-width: 768px) {
-    .dropdown-content {
-        position: relative; /* Se integra en el flujo del menú */
-        left: 0;
-        width: 100%;
         border: none;
         border-top: 1px solid #d4af37;
         border-bottom: 1px solid #d4af37;
-        background-color: #050505; /* Un tono ligeramente distinto para diferenciarlo */
-        box-shadow: none;
+        background-color: #050505;
     }
 
     .dropdown-content li a {
         text-align: center;
         padding: 15px 0 !important;
         font-size: 1.2rem !important;
-        font-family: 'Montserrat', sans-serif;
     }
 }
