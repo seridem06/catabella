@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedicure | Cata Bella</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="image/cb_001.png">
+    <style>
+        .seccion-servicios {
+            padding: 40px 5% 80px;
+            text-align: center;
+            background-color: #000;
+        }
+        .titulo-pagina {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .subtitulo-pagina {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .btn-regresar {
+            display: inline-block;
+            margin-bottom: 50px;
+            padding: 12px 35px;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn-regresar:hover { background-color: #d4af37; color: #000; }
+        .galeria-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .servicio-card { border: 1px solid #222; background: #050505; transition: 0.3s; }
+        .servicio-card:hover { border-color: #d4af37; }
+        .servicio-card img { width: 100%; height: 450px; object-fit: cover; }
+        .servicio-info { padding: 25px; }
+        .servicio-info h3 { color: #d4af37; font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container"><img src="image/logo.png" alt="Cata Bella Logo" class="logo"></div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#contacto" class="btn-reserva">Reservar Cita</a>
+        </nav>
+    </header>
+
+    <main style="padding-top: 320px;"> 
+        <section class="seccion-servicios">
+            <h1 class="titulo-pagina">Pedicure</h1>
+            <p class="subtitulo-pagina">Relajación y estética para tus pies</p>
+            <a href="index.html" class="btn-regresar">← Volver al Inicio</a>
+            <div class="galeria-servicios">
+                <article class="servicio-card">
+                    <img src="image/hero.png" alt="Pedicure Spa">
+                    <div class="servicio-info">
+                        <h3>Pedicure Spa Profundo</h3>
+                        <p>Incluye hidromasaje, exfoliación de sales marinas y mascarilla nutritiva.</p>
+                    </div>
+                </article>
+                <article class="servicio-card">
+                    <img src="image/cb.png" alt="Pedicure Clínico">
+                    <div class="servicio-info">
+                        <h3>Pedicure Clínico</h3>
+                        <p>Cuidado especializado centrado en la salud y confort de tus pies.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section"><h3>Cata Bella</h3><p>Tu bienestar es nuestra prioridad.</p></div>
+            <div class="footer-section"><h4>Contacto</h4><p>📍 Calle Principal 123, Arequipa</p><p>📞 +51 900 000 000</p></div>
+        </div>
+    </footer>
+</body>
+</html>
